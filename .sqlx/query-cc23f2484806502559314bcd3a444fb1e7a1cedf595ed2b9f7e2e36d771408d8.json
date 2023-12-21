@@ -1,0 +1,27 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        INSERT INTO \"task\" (\"id\", \"type\", \"state\", \"start_time\")\n        VALUES ($1, $2, 'Pending', $3)\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        {
+          "Custom": {
+            "name": "task_type",
+            "kind": {
+              "Enum": [
+                "Foo",
+                "Bar",
+                "Baz"
+              ]
+            }
+          }
+        },
+        "Timestamptz"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "cc23f2484806502559314bcd3a444fb1e7a1cedf595ed2b9f7e2e36d771408d8"
+}

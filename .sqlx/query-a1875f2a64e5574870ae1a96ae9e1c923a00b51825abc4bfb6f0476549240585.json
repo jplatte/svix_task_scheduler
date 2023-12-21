@@ -1,0 +1,63 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT \"id\" as \"id: _\", \"type\" as \"ty: _\", \"state\" as \"state: _\", \"start_time\"\n        FROM \"task\"\n        WHERE \"id\" = $1\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id: _",
+        "type_info": "Uuid"
+      },
+      {
+        "ordinal": 1,
+        "name": "ty: _",
+        "type_info": {
+          "Custom": {
+            "name": "task_type",
+            "kind": {
+              "Enum": [
+                "Foo",
+                "Bar",
+                "Baz"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "state: _",
+        "type_info": {
+          "Custom": {
+            "name": "task_state",
+            "kind": {
+              "Enum": [
+                "Pending",
+                "Active",
+                "Failed",
+                "Done"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "start_time",
+        "type_info": "Timestamptz"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Uuid"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "a1875f2a64e5574870ae1a96ae9e1c923a00b51825abc4bfb6f0476549240585"
+}
