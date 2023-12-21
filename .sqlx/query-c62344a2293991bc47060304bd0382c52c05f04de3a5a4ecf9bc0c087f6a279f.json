@@ -1,0 +1,27 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "UPDATE \"task\" SET \"state\" = $2 WHERE \"id\" = $1",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        {
+          "Custom": {
+            "name": "task_state",
+            "kind": {
+              "Enum": [
+                "Pending",
+                "Active",
+                "Failed",
+                "Done"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "c62344a2293991bc47060304bd0382c52c05f04de3a5a4ecf9bc0c087f6a279f"
+}

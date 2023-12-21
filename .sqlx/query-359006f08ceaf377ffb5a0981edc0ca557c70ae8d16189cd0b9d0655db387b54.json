@@ -1,0 +1,37 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT \"id\" as \"id: TaskId\", \"type\" as \"ty: TaskType\" FROM \"task\"\n        WHERE \"state\" = 'Pending' AND \"start_time\" <= NOW()\n        LIMIT 1\n        FOR NO KEY UPDATE SKIP LOCKED\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id: TaskId",
+        "type_info": "Uuid"
+      },
+      {
+        "ordinal": 1,
+        "name": "ty: TaskType",
+        "type_info": {
+          "Custom": {
+            "name": "task_type",
+            "kind": {
+              "Enum": [
+                "Foo",
+                "Bar",
+                "Baz"
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [
+      false,
+      false
+    ]
+  },
+  "hash": "359006f08ceaf377ffb5a0981edc0ca557c70ae8d16189cd0b9d0655db387b54"
+}
